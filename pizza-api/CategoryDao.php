@@ -122,16 +122,16 @@ class CategoryDao
                 while ($row = $this->result->fetch_assoc()) {
                     $resultSet[] = [
                         'id' => $row['id'],
-                        'name' => $row['categoryname'],
+                        'name' => $row['categoryname']
                     ];
                 }
                 $result = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
                 // $this->dbReference->sendResponse(200, '{"items":' . json_encode($resultSet, JSON_UNESCAPED_UNICODE) . '}');
-                return '{"categories":' . $result . '}';
+                return $result;
             } else {
                 //echo "0 results";
                 // $this->dbReference->sendResponse(200, '{"items":null}');
-                return '{"categories":null}';
+                return 'null';
             }
 
         }
